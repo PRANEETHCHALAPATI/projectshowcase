@@ -1,4 +1,4 @@
-The goal of this coding exam is to quickly get you off the ground with **setState Callback Function**.
+ **Project Showcase**.
 
 ### Refer to the video and image below:
 
@@ -158,7 +158,3 @@ Returns a response containing the list of all projects
 
 </details>
 
-> ### _Things to Keep in Mind_
->
-> - All components you implement should go in the `src/components` directory.
-> - Don't change the component folder names as those are the files being imported into the tests.
