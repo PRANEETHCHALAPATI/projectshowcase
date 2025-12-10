@@ -1,0 +1,196 @@
+/* ProjectShowcase.css - drop next to the component and import it */
+:root {
+  --accent: #0b84ff;
+  --muted: #f4f7f9;
+  --card-border: rgba(11, 132, 255, 0.08);
+  --text: #1b1f23;
+}
+
+.project-showcase {
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial;
+  color: var(--text);
+  min-height: 70vh;
+}
+
+/* header */
+.ps-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 24px;
+  background: var(--muted);
+}
+.ps-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+.ps-brand {
+  font-size: 16px;
+  margin: 0;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* main layout */
+.ps-main {
+  padding: 28px 36px;
+}
+.controls {
+  max-width: 520px;
+  margin-bottom: 20px;
+}
+
+/* select */
+.category-select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(27, 31, 35, 0.08);
+  background: #fff;
+  box-shadow: 0 1px 0 rgba(27, 31, 35, 0.02);
+  font-size: 14px;
+  appearance: none;
+}
+
+/* content area */
+.content-area {
+  min-height: 40vh; /* ensures loader centers nicely */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* loader */
+.loader-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.dot-spinner {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: inline-block;
+  transform: translateY(0);
+  animation: dot-bounce 1s infinite ease-in-out;
+}
+.dot:nth-child(2) {
+  animation-delay: 0.12s;
+}
+.dot:nth-child(3) {
+  animation-delay: 0.24s;
+}
+
+@keyframes dot-bounce {
+  0%,
+  80%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+  40% {
+    transform: translateY(-8px);
+    opacity: 1;
+  }
+}
+.loader-text {
+  font-size: 13px;
+  color: rgba(27, 31, 35, 0.6);
+}
+
+/* error view */
+.error-view {
+  text-align: center;
+  padding: 18px;
+}
+.error-image {
+  width: 180px;
+  height: auto;
+  display: block;
+  margin: 0 auto 12px;
+}
+.error-title {
+  margin: 6px 0;
+  font-size: 18px;
+  color: #222;
+}
+.error-desc {
+  margin: 4px 0 12px;
+  color: rgba(27, 31, 35, 0.6);
+}
+.btn-retry {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn-retry:hover {
+  opacity: 0.92;
+}
+
+/* projects grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 18px;
+  width: 100%;
+}
+.project-card {
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  padding: 12px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+.project-image {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.project-image.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f6f8fa;
+  color: rgba(27, 31, 35, 0.4);
+}
+.project-title {
+  margin: 0;
+  font-size: 15px;
+}
+
+/* utility */
+.visually-hidden {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
